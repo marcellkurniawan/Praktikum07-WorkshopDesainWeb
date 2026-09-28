@@ -4,43 +4,181 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Marcellino Putra Kurniawan - Kartu Produk</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Profil Pribadi | Marcellino Putra Kurniawan</title>
+    <!-- Bootstrap 5 CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Kriteria 7: CSS Box Sizing Universal */
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
+        }
+
+        /* Kriteria 3: CSS Gradients pada Header */
+        .hero-header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 80px 0 60px;
+        }
+
+        /* Kriteria 2 & 4: Rounded Corners & Shadow Effects pada Foto Profile */
+        .profile-img {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            border: 4px solid white;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            object-fit: cover;
+        }
+
+        /* Kriteria 2, 4, & 5: Rounded Corners, Shadows, dan 2D Transforms pada Card */
+        .custom-card {
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        /* Kriteria 5: 2D Transforms saat Hover */
+        .custom-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Kriteria 3: CSS Gradients pada Button */
+        .btn-gradient {
+            background: linear-gradient(45deg, #ff6b6b, #feca57);
+            border: none;
+            color: white;
+            font-weight: bold;
+            border-radius: 30px;
+            padding: 10px 25px;
+            box-shadow: 0 4px 10px rgba(255, 107, 107, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .btn-gradient:hover {
+            color: white;
+            transform: scale(1.05);
+            box-shadow: 0 6px 15px rgba(255, 107, 107, 0.6);
+        }
+    </style>
 </head>
 
 <body>
 
-    <h1>Katalog Produk Pilihan</h1>
+    <!-- Komponen 1: Bootstrap Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">Marcellino Putra Kurniawan</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="#about">Tentang</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#portfolio">Portofolio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Kontak</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-    <div class="card-container">
-        <div class="product-card">
-            <img src="https://placehold.net/400x600.png" alt="Headphone Wireless">
-            <h3 id="product-title-1">Headphone Wireless Pro</h3>
-            <div class="product-price">Rp 750.000</div>
-            <p>Peredam kebisingan aktif dengan kualitas suara jernih dan daya tahan baterai hingga 30 jam pemakaian
-                nonstop.</p>
-            <button class="btn-buy">Beli Sekarang</button>
+    <!-- Header Section dengan Gradient Background -->
+    <header class="hero-header text-center">
+        <div class="container">
+            <img src="images/Marcellino Putra Kurniawan.jpg" alt="Marcellino Putra Kurniawan" class="profile-img mb-3">
+            <h1 class="fw-bold">Marcellino Putra Kurniawan</h1>
+            <p class="lead mb-4">Mahasiswa D3 PJJ Teknik Informatika'26 | Tech Enthusiast</p>
+            <!-- Kriteria 6: CSS/Bootstrap Tooltip -->
+            <button class="btn btn-gradient" data-bs-toggle="tooltip" data-bs-placement="bottom"
+                title="Kirim pesan langsung ke email saya!">
+                Hubungi Saya
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content dengan Komponen Grid & Cards -->
+    <main class="container my-5" id="portfolio">
+        <h2 class="text-center fw-bold mb-4">Proyek Portofolio</h2>
+
+        <!-- Komponen 2: Bootstrap Grid System -->
+        <div class="row g-4">
+            <!-- Komponen 3: Bootstrap Card 1 -->
+            <div class="col-md-4">
+                <div class="card custom-card h-100 p-3">
+                    <img src="images/shoecycle.png" class="card-img-top rounded-3" alt="Proyek 1">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold">E-Commerce ShoeCycle</h5>
+                        <p class="card-text text-muted">Platform toko online daur ulang dan perawatan sepatu dengan
+                            antarmuka modern, katalog produk interaktif, serta sistem transaksi yang mudah.</p>
+                        <!-- Komponen 4: Bootstrap Button -->
+                        <a href="#" class="btn btn-outline-primary btn-sm rounded-pill" data-bs-toggle="tooltip"
+                            title="Lihat detail kode di GitHub">Detail Proyek</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Komponen 3: Bootstrap Card 2 -->
+            <div class="col-md-4">
+                <div class="card custom-card h-100 p-3">
+                    <img src="images/extra-registration.png" class="card-img-top rounded-3" alt="Proyek 2">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold">Manajemen Ekstrakulikuler Sekolah</h5>
+                        <p class="card-text text-muted">Aplikasi web pendaftaran dan pengelolaan kegiatan
+                            ekstrakurikuler sekolah untuk mempermudah siswa memilih kegiatan serta membantu pembina
+                            memantau jadwal.</p>
+                        <a href="#" class="btn btn-outline-primary btn-sm rounded-pill" data-bs-toggle="tooltip"
+                            title="Lihat detail kode di GitHub">Detail Proyek</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Komponen 3: Bootstrap Card 3 -->
+            <div class="col-md-4">
+                <div class="card custom-card h-100 p-3">
+                    <img src="images/wedding.png" class="card-img-top rounded-3" alt="Proyek 3">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold">Web Undangan Pernikahan</h5>
+                        <p class="card-text text-muted">Website undangan digital responsif dan elegan yang dilengkapi
+                            galeri foto, peta lokasi acara, hitung mundur (countdown), serta formulir konfirmasi
+                            kehadiran (RSVP).</p>
+                        <a href="#" class="btn btn-outline-primary btn-sm rounded-pill" data-bs-toggle="tooltip"
+                            title="Lihat detail kode di GitHub">Detail Proyek</a>
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <div class="product-card">
-            <img src="https://placehold.net/400x600.png" alt="Smartwatch Sport">
-            <h3 id="product-title-2">Smartwatch Fitness V2</h3>
-            <div class="product-price">Rp 1.250.000</div>
-            <p>Pantau detak jantung, pola tidur, dan aktivitas olahraga harian Anda dengan layar AMOLED presisi tinggi.
-            </p>
-            <button class="btn-buy">Beli Sekarang</button>
-        </div>
+        <!-- Komponen 5: Bootstrap Pagination -->
+        <nav class="d-flex justify-content-center mt-5">
+            <ul class="pagination">
+                <li class="page-item disabled"><a class="page-link" href="#">&laquo;</a></li>
+                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item"><a class="page-link" href="#">&raquo;</a></li>
+            </ul>
+        </nav>
+    </main>
 
-        <div class="product-card">
-            <img src="https://placehold.net/400x600.png" alt="Keyboard Mechanical">
-            <h3 id="product-title-3">Keyboard Mechanical RGB</h3>
-            <div class="product-price">Rp 950.000</div>
-            <p>Sensasi mengetik responsif dengan sakelar mekanikal taktil dan efek pencahayaan RGB yang dapat
-                disesuaikan.</p>
-            <button class="btn-buy">Beli Sekarang</button>
-        </div>
-    </div>
+    <!-- Footer Section -->
+    <footer class="bg-dark text-white text-center py-4 mt-5">
+        <p class="mb-0">&copy; 2026 Marcellino Putra Kurniawan (3126510020) | Politeknik Elektronika Negeri Surabaya
+        </p>
+    </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl)
+        })
+    </script>
 </body>
 
 </html>
