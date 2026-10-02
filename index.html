@@ -4,181 +4,220 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profil Pribadi | Marcellino Putra Kurniawan</title>
-    <!-- Bootstrap 5 CSS CDN -->
+    <title>Profil Kampus | Politeknik Elektronika Negeri Surabaya</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        /* Kriteria 7: CSS Box Sizing Universal */
-        * {
-            box-sizing: border-box;
+        :root {
+            --primary-kampus: #023269;
+            --accent-kampus: #f3c907;
         }
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f8f9fa;
+        .bg-primary-kampus {
+            background-color: var(--primary-kampus) !important;
         }
 
-        /* Kriteria 3: CSS Gradients pada Header */
-        .hero-header {
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-            color: white;
-            padding: 80px 0 60px;
+        .bg-accent-kampus {
+            background-color: var(--accent-kampus) !important;
         }
 
-        /* Kriteria 2 & 4: Rounded Corners & Shadow Effects pada Foto Profile */
-        .profile-img {
-            width: 160px;
-            height: 160px;
-            border-radius: 50%;
-            border: 4px solid white;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-            object-fit: cover;
+        .text-primary-kampus {
+            color: var(--primary-kampus) !important;
         }
 
-        /* Kriteria 2, 4, & 5: Rounded Corners, Shadows, dan 2D Transforms pada Card */
-        .custom-card {
-            border: none;
-            border-radius: 15px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        .border-accent {
+            border-bottom: 4px solid var(--accent-kampus) !important;
         }
 
-        /* Kriteria 5: 2D Transforms saat Hover */
-        .custom-card:hover {
-            transform: translateY(-8px) scale(1.02);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-        }
-
-        /* Kriteria 3: CSS Gradients pada Button */
-        .btn-gradient {
-            background: linear-gradient(45deg, #ff6b6b, #feca57);
-            border: none;
-            color: white;
-            font-weight: bold;
-            border-radius: 30px;
-            padding: 10px 25px;
-            box-shadow: 0 4px 10px rgba(255, 107, 107, 0.4);
-            transition: all 0.3s ease;
-        }
-
-        .btn-gradient:hover {
-            color: white;
-            transform: scale(1.05);
-            box-shadow: 0 6px 15px rgba(255, 107, 107, 0.6);
+        .navbar-dark .navbar-nav .nav-link.active {
+            color: var(--accent-kampus) !important;
         }
     </style>
 </head>
 
 <body>
 
-    <!-- Komponen 1: Bootstrap Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <!-- Header & Navigasi -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary-kampus border-accent sticky-top">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="#">Marcellino Putra Kurniawan</a>
+            <a class="navbar-brand fw-bold text-white" href="#">
+                <span class="text-warning">PENS</span>
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link active" href="#about">Tentang</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#portfolio">Portofolio</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Kontak</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="#tentang">Tentang</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#prodi">Program Studi</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#galeri">Galeri</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#kontak">Kontak</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!-- Header Section dengan Gradient Background -->
-    <header class="hero-header text-center">
+    <!-- Banner Hero -->
+    <div class="container-fluid bg-primary-kampus text-white p-5 text-center mb-5">
         <div class="container">
-            <img src="images/Marcellino Putra Kurniawan.jpg" alt="Marcellino Putra Kurniawan" class="profile-img mb-3">
-            <h1 class="fw-bold">Marcellino Putra Kurniawan</h1>
-            <p class="lead mb-4">Mahasiswa D3 PJJ Teknik Informatika'26 | Tech Enthusiast</p>
-            <!-- Kriteria 6: CSS/Bootstrap Tooltip -->
-            <button class="btn btn-gradient" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                title="Kirim pesan langsung ke email saya!">
-                Hubungi Saya
-            </button>
+            <h1 class="display-4 fw-bold">Politeknik Elektronika Negeri Surabaya</h1>
+            <p class="lead text-warning">Center of Excellence in Applied Technology</p>
         </div>
-    </header>
+    </div>
 
-    <!-- Main Content dengan Komponen Grid & Cards -->
-    <main class="container my-5" id="portfolio">
-        <h2 class="text-center fw-bold mb-4">Proyek Portofolio</h2>
+    <div class="container">
 
-        <!-- Komponen 2: Bootstrap Grid System -->
-        <div class="row g-4">
-            <!-- Komponen 3: Bootstrap Card 1 -->
-            <div class="col-md-4">
-                <div class="card custom-card h-100 p-3">
-                    <img src="images/shoecycle.png" class="card-img-top rounded-3" alt="Proyek 1">
-                    <div class="card-body">
-                        <h5 class="card-title fw-bold">E-Commerce ShoeCycle</h5>
-                        <p class="card-text text-muted">Platform toko online daur ulang dan perawatan sepatu dengan
-                            antarmuka modern, katalog produk interaktif, serta sistem transaksi yang mudah.</p>
-                        <!-- Komponen 4: Bootstrap Button -->
-                        <a href="#" class="btn btn-outline-primary btn-sm rounded-pill" data-bs-toggle="tooltip"
-                            title="Lihat detail kode di GitHub">Detail Proyek</a>
-                    </div>
+        <!-- Section: Tentang Kampus -->
+        <section id="tentang" class="mb-5">
+            <div class="row align-items-center">
+                <div class="col-md-6 mb-3 mb-md-0">
+                    <img src="images/Gedung-Pens.jpg" class="img-fluid rounded shadow" alt="Gedung Kampus">
+                </div>
+                <div class="col-md-6">
+                    <h2 class="text-primary-kampus fw-bold">Tentang Kampus</h2>
+                    <p class="lead">PENS adalah perguruan tinggi vokasi pemimpin di bidang teknologi terapan.</p>
+                    <p>Kampus ini berfokus pada pengembangan keahlian praktis siswa di bidang Teknik Informatika,
+                        Komputer, Elektronika, dan Telekomunikasi guna menghasilkan lulusan inovatif yang siap bersaing
+                        di tingkat global.</p>
                 </div>
             </div>
+        </section>
 
-            <!-- Komponen 3: Bootstrap Card 2 -->
-            <div class="col-md-4">
-                <div class="card custom-card h-100 p-3">
-                    <img src="images/extra-registration.png" class="card-img-top rounded-3" alt="Proyek 2">
-                    <div class="card-body">
-                        <h5 class="card-title fw-bold">Manajemen Ekstrakulikuler Sekolah</h5>
-                        <p class="card-text text-muted">Aplikasi web pendaftaran dan pengelolaan kegiatan
-                            ekstrakurikuler sekolah untuk mempermudah siswa memilih kegiatan serta membantu pembina
-                            memantau jadwal.</p>
-                        <a href="#" class="btn btn-outline-primary btn-sm rounded-pill" data-bs-toggle="tooltip"
-                            title="Lihat detail kode di GitHub">Detail Proyek</a>
-                    </div>
-                </div>
+        <hr class="my-5">
+
+        <!-- Section: Program Studi (3 Jenis Tabel Berbeda) -->
+        <section id="prodi" class="mb-5">
+            <h2 class="text-primary-kampus fw-bold text-center mb-4">Program Studi & Akreditasi</h2>
+
+            <!-- Tabel Jenis 1: Striped Table dengan Dark Header -->
+            <h4 class="mt-4 text-secondary">1. Program Diploma 3 (D3)</h4>
+            <div class="table-responsive">
+                <table class="table table-striped table-bordered">
+                    <thead class="bg-primary-kampus text-white">
+                        <tr>
+                            <th>#</th>
+                            <th>Nama Program Studi</th>
+                            <th>Akreditasi</th>
+                            <th>Kapasitas</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>D3 PJJ Teknik Informatika</td>
+                            <td><span class="badge bg-success">Unggul</span></td>
+                            <td>120 Mahasiswa</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>D3 Teknik Elektronika</td>
+                            <td><span class="badge bg-success">Unggul</span></td>
+                            <td>90 Mahasiswa</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
 
-            <!-- Komponen 3: Bootstrap Card 3 -->
-            <div class="col-md-4">
-                <div class="card custom-card h-100 p-3">
-                    <img src="images/wedding.png" class="card-img-top rounded-3" alt="Proyek 3">
-                    <div class="card-body">
-                        <h5 class="card-title fw-bold">Web Undangan Pernikahan</h5>
-                        <p class="card-text text-muted">Website undangan digital responsif dan elegan yang dilengkapi
-                            galeri foto, peta lokasi acara, hitung mundur (countdown), serta formulir konfirmasi
-                            kehadiran (RSVP).</p>
-                        <a href="#" class="btn btn-outline-primary btn-sm rounded-pill" data-bs-toggle="tooltip"
-                            title="Lihat detail kode di GitHub">Detail Proyek</a>
-                    </div>
+            <!-- Tabel Jenis 2: Hover Table dengan Primary Header -->
+            <h4 class="mt-4 text-secondary">2. Program Sarjana Terapan (D4)</h4>
+            <div class="table-responsive">
+                <table class="table table-hover table-bordered">
+                    <thead class="table-primary">
+                        <tr>
+                            <th>#</th>
+                            <th>Nama Program Studi</th>
+                            <th>Akreditasi</th>
+                            <th>Gelar Academic</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>D4 Teknik Informatika</td>
+                            <td><span class="badge bg-success">Unggul</span></td>
+                            <td>S.Tr.T.</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>D4 Sains Data Terapan</td>
+                            <td><span class="badge bg-info text-dark">Baik Sekali</span></td>
+                            <td>S.Tr.Si.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Tabel Jenis 3: Borderless Table dengan Custom Background Context -->
+            <h4 class="mt-4 text-secondary">3. Program Pascasarjana (S2 Terapan)</h4>
+            <div class="table-responsive">
+                <table class="table table-borderless table-warning">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Program Magister</th>
+                            <th>Fokus Riset</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>S2 Terapan Teknik Informatika</td>
+                            <td>AI & Data Engineering</td>
+                            <td><span class="badge bg-primary">Aktif</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <hr class="my-5">
+
+        <!-- Section: Galeri Kampus -->
+        <section id="galeri" class="mb-5">
+            <h2 class="text-primary-kampus fw-bold text-center mb-4">Galeri Kegiatan Kampus</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <figure class="figure">
+                        <img src="images/Gedung-Utama.jpg" class="figure-img img-fluid img-thumbnail"
+                            alt="Gedung Utama">
+                        <figcaption class="figure-caption text-center">Gedung Gedung Utama PENS</figcaption>
+                    </figure>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <figure class="figure">
+                        <img src="images/Lab-2-1.jpeg" class="figure-img img-fluid img-thumbnail" alt="Laboratorium AI">
+                        <figcaption class="figure-caption text-center">Laboratorium Praktikum Komputer</figcaption>
+                    </figure>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <figure class="figure">
+                        <img src="images/web-5.jpg" class="figure-img img-fluid img-thumbnail" alt="Kegiatan Workshop">
+                        <figcaption class="figure-caption text-center">Kegiatan Workshop Developer</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Footer dengan Informasi Kontak -->
+    <footer id="kontak" class="bg-primary-kampus text-white p-4 mt-5 border-top border-warning border-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 mb-3 mb-md-0">
+                    <h5 class="text-warning fw-bold">Politeknik Elektronika Negeri Surabaya</h5>
+                    <p class="small mb-0">Jl. Raya Raya PENS, Sukolilo, Surabaya, Jawa Timur 60111</p>
+                    <p class="small">Email: info@pens.ac.id | Telp: (031) 5947280</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p class="mb-0">&copy; 2026 Marcellino Putra Kurniawan (3126510020)</p>
+                    <p class="small text-warning">Praktikum Workshop Desain Web - Bootstrap 5</p>
                 </div>
             </div>
         </div>
-
-        <!-- Komponen 5: Bootstrap Pagination -->
-        <nav class="d-flex justify-content-center mt-5">
-            <ul class="pagination">
-                <li class="page-item disabled"><a class="page-link" href="#">&laquo;</a></li>
-                <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                <li class="page-item"><a class="page-link" href="#">&raquo;</a></li>
-            </ul>
-        </nav>
-    </main>
-
-    <!-- Footer Section -->
-    <footer class="bg-dark text-white text-center py-4 mt-5">
-        <p class="mb-0">&copy; 2026 Marcellino Putra Kurniawan (3126510020) | Politeknik Elektronika Negeri Surabaya
-        </p>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
-        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-            return new bootstrap.Tooltip(tooltipTriggerEl)
-        })
-    </script>
 </body>
 
 </html>
