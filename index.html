@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profil Kampus | Politeknik Elektronika Negeri Surabaya</title>
+    <title>Dashboard | PENS</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         :root {
@@ -16,205 +16,158 @@
             background-color: var(--primary-kampus) !important;
         }
 
-        .bg-accent-kampus {
-            background-color: var(--accent-kampus) !important;
-        }
-
         .text-primary-kampus {
             color: var(--primary-kampus) !important;
         }
 
-        .border-accent {
-            border-bottom: 4px solid var(--accent-kampus) !important;
+        .btn-accent {
+            background-color: var(--accent-kampus);
+            color: var(--primary-kampus);
+            font-weight: bold;
+            border: none;
         }
 
-        .navbar-dark .navbar-nav .nav-link.active {
-            color: var(--accent-kampus) !important;
+        .btn-accent:hover {
+            background-color: #d8b206;
+            color: var(--primary-kampus);
         }
     </style>
 </head>
 
-<body>
+<body class="bg-light">
 
-    <!-- Header & Navigasi -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary-kampus border-accent sticky-top">
-        <div class="container">
-            <a class="navbar-brand fw-bold text-white" href="#">
-                <span class="text-warning">PENS</span>
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link active" href="#tentang">Tentang</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#prodi">Program Studi</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#galeri">Galeri</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#kontak">Kontak</a></li>
+    <!-- Header / Jumbotron -->
+    <div class="container mt-4">
+        <div class="bg-primary-kampus text-white p-5 rounded-3 shadow-sm border-bottom border-warning border-4">
+            <h1 class="display-5 fw-bold">Dashboard</h1>
+            <p class="lead">Selamat datang kembali, <strong>Marcellino Putra Kurniawan</strong>. Kelola statistik dan
+                aktivitas sistem kampus secara real-time.</p>
+            <hr class="my-3 border-warning">
+            <div class="d-flex gap-2">
+                <button class="btn btn-accent btn-lg">Unduh Laporan System</button>
+                <button class="btn btn-outline-light btn-lg">Pengaturan</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-4">
+
+        <!-- Section Alerts (3 Jenis Alert) -->
+        <h4 class="text-primary-kampus mb-3">Status & Notifikasi Sistem</h4>
+
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <h5 class="alert-heading mb-1">Pembaruan Berhasil!</h5>
+            Database sistem akademik telah diperbarui otomatis pada pukul 03.00 WIB.
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            <strong>Peringatan Kapasitas!</strong> Penggunaan memori server telah mencapai 75%. Pertimbangkan untuk
+            pembersihan cache.
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <h5 class="alert-heading mb-1">Koneksi Terputus!</h5>
+            Gagal terhubung ke modul gateway pembayaran otomatis. Silakan cek konfigurasi jaringan.
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+
+        <!-- Section Progress Bars (Visualisasi Statistik) -->
+        <div class="card p-4 shadow-sm mb-4">
+            <h4 class="text-primary-kampus mb-3">Statistik Kinerja Server</h4>
+
+            <p class="mb-1 fw-bold">Penyimpanan Cloud Server (45%)</p>
+            <div class="progress mb-3" style="height: 22px;">
+                <div class="progress-bar bg-success progress-bar-striped" role="progressbar" style="width: 45%"
+                    aria-valuenow="45" aria-valuemin="0" aria-valuemax="100">45% Terpakai</div>
+            </div>
+
+            <p class="mb-1 fw-bold">Beban Kerja CPU (75%)</p>
+            <div class="progress mb-3" style="height: 22px;">
+                <div class="progress-bar bg-warning progress-bar-striped progress-bar-animated" role="progressbar"
+                    style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">75% Kritis</div>
+            </div>
+
+            <p class="mb-1 fw-bold">Target Pendaftaran Mahasiswa Baru (90%)</p>
+            <div class="progress mb-3" style="height: 22px;">
+                <div class="progress-bar bg-danger" role="progressbar" style="width: 90%" aria-valuenow="90"
+                    aria-valuemin="0" aria-valuemax="100">90% Terpenuhi</div>
+            </div>
+        </div>
+
+        <!-- Section Buttons & Control Panel -->
+        <div class="card p-4 shadow-sm mb-4">
+            <h4 class="text-primary-kampus mb-3">Panel Kontrol Quick Action</h4>
+
+            <div class="mb-3">
+                <p class="text-muted mb-2">Aksi Pengelolaan User:</p>
+                <button type="button" class="btn btn-primary btn-sm">Tambah Admin</button>
+                <button type="button" class="btn btn-success btn-sm">Export Excel</button>
+                <button type="button" class="btn btn-warning btn-sm text-white">Sinkronisasi</button>
+                <button type="button" class="btn btn-danger btn-sm">Reset Log</button>
+                <button type="button" class="btn btn-outline-primary btn-sm">Bantuan</button>
+            </div>
+
+            <div>
+                <p class="text-muted mb-2">Tampilan Mode Filter Data:</p>
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-outline-secondary active">Harian</button>
+                    <button type="button" class="btn btn-outline-secondary">Mingguan</button>
+                    <button type="button" class="btn btn-outline-secondary">Bulanan</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section Pagination Data Log -->
+        <div class="card p-4 shadow-sm mb-5">
+            <h4 class="text-primary-kampus mb-3">Log Aktivitas Sistem</h4>
+
+            <table class="table table-hover table-striped">
+                <thead class="table-dark">
+                    <tr>
+                        <th>ID Log</th>
+                        <th>Waktu</th>
+                        <th>User</th>
+                        <th>Aktivitas</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>#LOG-1029</td>
+                        <td>08:30 WIB</td>
+                        <td>admin_marcell</td>
+                        <td>Login ke Dashboard Admin</td>
+                        <td><span class="badge bg-success">Berhasil</span></td>
+                    </tr>
+                    <tr>
+                        <td>#LOG-1028</td>
+                        <td>08:15 WIB</td>
+                        <td>system_cron</td>
+                        <td>Backup Otomatis Database</td>
+                        <td><span class="badge bg-info text-dark">Selesai</span></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- Pagination Navigasi -->
+            <nav class="d-flex justify-content-center mt-3">
+                <ul class="pagination">
+                    <li class="page-item disabled"><a class="page-link" href="#">&laquo; Previous</a></li>
+                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item"><a class="page-link" href="#">Next &raquo;</a></li>
                 </ul>
-            </div>
+            </nav>
         </div>
-    </nav>
-
-    <!-- Banner Hero -->
-    <div class="container-fluid bg-primary-kampus text-white p-5 text-center mb-5">
-        <div class="container">
-            <h1 class="display-4 fw-bold">Politeknik Elektronika Negeri Surabaya</h1>
-            <p class="lead text-warning">Center of Excellence in Applied Technology</p>
-        </div>
-    </div>
-
-    <div class="container">
-
-        <!-- Section: Tentang Kampus -->
-        <section id="tentang" class="mb-5">
-            <div class="row align-items-center">
-                <div class="col-md-6 mb-3 mb-md-0">
-                    <img src="images/Gedung-Pens.jpg" class="img-fluid rounded shadow" alt="Gedung Kampus">
-                </div>
-                <div class="col-md-6">
-                    <h2 class="text-primary-kampus fw-bold">Tentang Kampus</h2>
-                    <p class="lead">PENS adalah perguruan tinggi vokasi pemimpin di bidang teknologi terapan.</p>
-                    <p>Kampus ini berfokus pada pengembangan keahlian praktis siswa di bidang Teknik Informatika,
-                        Komputer, Elektronika, dan Telekomunikasi guna menghasilkan lulusan inovatif yang siap bersaing
-                        di tingkat global.</p>
-                </div>
-            </div>
-        </section>
-
-        <hr class="my-5">
-
-        <!-- Section: Program Studi (3 Jenis Tabel Berbeda) -->
-        <section id="prodi" class="mb-5">
-            <h2 class="text-primary-kampus fw-bold text-center mb-4">Program Studi & Akreditasi</h2>
-
-            <!-- Tabel Jenis 1: Striped Table dengan Dark Header -->
-            <h4 class="mt-4 text-secondary">1. Program Diploma 3 (D3)</h4>
-            <div class="table-responsive">
-                <table class="table table-striped table-bordered">
-                    <thead class="bg-primary-kampus text-white">
-                        <tr>
-                            <th>#</th>
-                            <th>Nama Program Studi</th>
-                            <th>Akreditasi</th>
-                            <th>Kapasitas</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>D3 PJJ Teknik Informatika</td>
-                            <td><span class="badge bg-success">Unggul</span></td>
-                            <td>120 Mahasiswa</td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>D3 Teknik Elektronika</td>
-                            <td><span class="badge bg-success">Unggul</span></td>
-                            <td>90 Mahasiswa</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <!-- Tabel Jenis 2: Hover Table dengan Primary Header -->
-            <h4 class="mt-4 text-secondary">2. Program Sarjana Terapan (D4)</h4>
-            <div class="table-responsive">
-                <table class="table table-hover table-bordered">
-                    <thead class="table-primary">
-                        <tr>
-                            <th>#</th>
-                            <th>Nama Program Studi</th>
-                            <th>Akreditasi</th>
-                            <th>Gelar Academic</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>D4 Teknik Informatika</td>
-                            <td><span class="badge bg-success">Unggul</span></td>
-                            <td>S.Tr.T.</td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>D4 Sains Data Terapan</td>
-                            <td><span class="badge bg-info text-dark">Baik Sekali</span></td>
-                            <td>S.Tr.Si.</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <!-- Tabel Jenis 3: Borderless Table dengan Custom Background Context -->
-            <h4 class="mt-4 text-secondary">3. Program Pascasarjana (S2 Terapan)</h4>
-            <div class="table-responsive">
-                <table class="table table-borderless table-warning">
-                    <thead>
-                        <tr>
-                            <th>#</th>
-                            <th>Program Magister</th>
-                            <th>Fokus Riset</th>
-                            <th>Status</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>S2 Terapan Teknik Informatika</td>
-                            <td>AI & Data Engineering</td>
-                            <td><span class="badge bg-primary">Aktif</span></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </section>
-
-        <hr class="my-5">
-
-        <!-- Section: Galeri Kampus -->
-        <section id="galeri" class="mb-5">
-            <h2 class="text-primary-kampus fw-bold text-center mb-4">Galeri Kegiatan Kampus</h2>
-            <div class="row">
-                <div class="col-md-4 mb-4">
-                    <figure class="figure">
-                        <img src="images/Gedung-Utama.jpg" class="figure-img img-fluid img-thumbnail"
-                            alt="Gedung Utama">
-                        <figcaption class="figure-caption text-center">Gedung Gedung Utama PENS</figcaption>
-                    </figure>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <figure class="figure">
-                        <img src="images/Lab-2-1.jpeg" class="figure-img img-fluid img-thumbnail" alt="Laboratorium AI">
-                        <figcaption class="figure-caption text-center">Laboratorium Praktikum Komputer</figcaption>
-                    </figure>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <figure class="figure">
-                        <img src="images/web-5.jpg" class="figure-img img-fluid img-thumbnail" alt="Kegiatan Workshop">
-                        <figcaption class="figure-caption text-center">Kegiatan Workshop Developer</figcaption>
-                    </figure>
-                </div>
-            </div>
-        </section>
 
     </div>
 
-    <!-- Footer dengan Informasi Kontak -->
-    <footer id="kontak" class="bg-primary-kampus text-white p-4 mt-5 border-top border-warning border-3">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 mb-3 mb-md-0">
-                    <h5 class="text-warning fw-bold">Politeknik Elektronika Negeri Surabaya</h5>
-                    <p class="small mb-0">Jl. Raya Raya PENS, Sukolilo, Surabaya, Jawa Timur 60111</p>
-                    <p class="small">Email: info@pens.ac.id | Telp: (031) 5947280</p>
-                </div>
-                <div class="col-md-6 text-md-end">
-                    <p class="mb-0">&copy; 2026 Marcellino Putra Kurniawan (3126510020)</p>
-                    <p class="small text-warning">Praktikum Workshop Desain Web - Bootstrap 5</p>
-                </div>
-            </div>
-        </div>
+    <footer class="bg-primary-kampus text-white text-center py-3 border-top border-warning border-3">
+        <p class="mb-0 small">&copy; 2026 Marcellino Putra Kurniawan (3126510020) | D3 PJJ Teknik Informatika'26 PENS
+        </p>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
