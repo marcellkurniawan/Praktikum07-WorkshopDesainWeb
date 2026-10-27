@@ -41,8 +41,8 @@ Sebuah proyek halaman web _Dashboard Admin_ interaktif dan responsif yang dikemb
 
 ### 1. Tampilan Desktop (PC View)
 
-![Tampilan PC](images/landing1.png)
-![Tampilan PC](images/landing2.png)
+![Tampilan PC](landing1.png)
+![Tampilan PC](landing2.png)
 
 ---
 
